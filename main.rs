@@ -1,9 +1,12 @@
 mod bubble;
-use bubble::bubble_sort;
-mod merge;
-use merge::merge_sort;
 mod insert;
+mod merge;
+mod quick;
+
+use bubble::bubble_sort;
 use insert::insert_sort;
+use merge::merge_sort;
+use quick::quick_sort;
 
 fn main() {
     println!("test bubble sort algorithms");
@@ -14,6 +17,16 @@ fn main() {
 
     println!("test insert sort");
     test_insert();
+
+    println!("test quick sort");
+    test_quick();
+}
+
+fn test_quick() {
+    let mut array = vec![1, 10, 3, 28, 29, 30, 11, 100, 23];
+    println!("before quick sort arrary {:?}", array);
+    quick_sort(&mut array);
+    println!("after quick sort arrary  {:?}", array);
 }
 
 fn test_insert() {
