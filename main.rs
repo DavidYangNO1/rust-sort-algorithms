@@ -2,6 +2,7 @@ mod bubble;
 mod insert;
 mod merge;
 mod quick;
+mod heap;
 
 use bubble::bubble_sort;
 use insert::insert_sort;
@@ -9,17 +10,28 @@ use merge::merge_sort;
 use quick::quick_sort;
 
 fn main() {
-    println!("test bubble sort algorithms");
-    test_bubble();
+   
+    println!("test heap sort algorithms");
+    test_heap();
 
-    println!("test merge sort");
-    test_merge();
+    // println!("test bubble sort algorithms");
+    // test_bubble();
 
-    println!("test insert sort");
-    test_insert();
+    // println!("test merge sort");
+    // test_merge();
 
-    println!("test quick sort");
-    test_quick();
+    // println!("test insert sort");
+    // test_insert();
+
+    // println!("test quick sort");
+    // test_quick();
+}
+
+fn test_heap() {
+    let mut array = vec![1, 10, 3, 28, 29, 30, 11, 100, 23];
+    println!("before heap sort arrary {:?}", array);
+    heap::heap_sort(&mut array);
+    println!("after heap sort arrary  {:?}", array);
 }
 
 fn test_quick() {
